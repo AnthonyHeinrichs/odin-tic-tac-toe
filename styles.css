@@ -1,3 +1,47 @@
-.title {
-  background: blue;
+body,h1 {
+  margin: 0;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin-top: 36px;
+  font-size: 48px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.wrapper {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+}
+
+.box:nth-child(-n + 2), .box:nth-child(4), .box:nth-child(5) {
+  border-bottom: solid black;
+  border-right: solid black;
+}
+
+.box:nth-child(3), .box:nth-child(6) {
+  border-bottom:solid black;
+}
+
+.box:nth-child(n + 8) {
+  border-left: solid black;
+}
+
+.box:hover {
+  background: rgba(0, 0, 0, 0.096);
+}
+
+
