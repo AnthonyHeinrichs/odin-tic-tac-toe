@@ -3,6 +3,36 @@
 body,h1,h2 {
   margin: 0;
   background-color: rgb(222, 252, 222);
+  font-family: 'Gemunu Libre'
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 500px) {
+  .title {
+    font-size: 62px;
+  }
+  .newGame, .vsPlayer, .vsComputer  {
+    font-size: 24px;
+  }
+} 
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 36px;
+  }
+  .newGame, .vsPlayer, .vsComputer  {
+    font-size: 18px;
+  }
+}
+
+.title {
+  margin-top: 36px;
+  font-family: 'Gemunu Libre', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: +0.2em;
 }
 
 .newGame {
@@ -10,12 +40,27 @@ body,h1,h2 {
 }
 
 .vsPlayer {
+  margin-top: 48px;
   cursor: pointer;
   transition: 200ms;
+  width: 100%;
+  background: rgb(213, 213, 245);
 }
 
 .vsPlayer:hover {
-  font-size: 48px;
+  font-size: 36px;
+  transition: 200ms;
+}
+
+.vsComputer {
+  cursor: pointer;
+  transition: 200ms;
+  width: 100%;
+  background: rgb(245, 213, 213);
+}
+
+.vsComputer:hover {
+  font-size: 36px;
   transition: 200ms;
 }
 
@@ -25,26 +70,35 @@ body,h1,h2 {
   align-items: center;
 }
 
-.title {
-  margin-top: 36px;
-  font-size: 62px;
-  font-family: 'Gemunu Libre', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: 800;
-  letter-spacing: +0.2em;
+@media (min-width: 500px) {
+  .wrapper {
+    grid-template-columns: 200px 200px 200px;
+  }
+  .box {
+    height: 200px;
+    width: 200px;
+  }
+} 
+
+@media (max-width: 500px) {
+  .wrapper {
+    grid-template-columns: 100px 100px 100px;
+  }
+  .box {
+    height: 100px;
+    width: 100px;
+  }
 }
 
 .wrapper {
   margin-top: 62px;
   display: grid;
-  grid-template-columns: 200px 200px 200px;
 }
 
 .box {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
-  width: 200px;
 }
 
 .box:nth-child(-n + 2), .box:nth-child(4), .box:nth-child(5) {
@@ -60,9 +114,29 @@ body,h1,h2 {
   border-left: solid black 8px;
 }
 
+@media (min-width: 500px) {
+  .o {
+    height: 180px;
+    width: 180px;
+  }
+  .x {
+    height: 180px;
+    width: 180px;
+  }
+} 
+
+@media (max-width: 500px) {
+  .o {
+    height: 80px;
+    width: 80px;
+  }
+  .x {
+    height: 80px;
+    width: 80px;
+  }
+}
+
 .o {
-  height: 180px;
-  width: 180px;
   background: none;
   border: none;
 }
@@ -76,8 +150,6 @@ body,h1,h2 {
 }
 
 .x {
-  height: 180px;
-  width: 180px;
   background: none;
   border: none;
 }
