@@ -5,6 +5,18 @@ const winner = document.getElementById('winner')
 const winnerName = document.getElementById('winnerName')
 const vsPlayer = document.getElementById('vsPlayer')
 const vsComputer = document.getElementById('vsComputer')
+let playerOneTurn = true
+
+const startGame = () => {
+  newGame.classList.add('hidden')
+  winner.classList.add('hidden')
+}
+
+const gameOver = () => {
+  board.classList.add('hidden')
+}
+
+vsPlayer.addEventListener('click', startGame)
 
 const winningCombinations = [
 	[0, 1, 2],
