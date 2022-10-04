@@ -71,7 +71,7 @@ body,h1,h2 {
 }
 
 @media (min-width: 500px) {
-  .wrapper {
+  .playBoard {
     grid-template-columns: 200px 200px 200px;
   }
   .box {
@@ -81,7 +81,7 @@ body,h1,h2 {
 } 
 
 @media (max-width: 500px) {
-  .wrapper {
+  .playBoard {
     grid-template-columns: 100px 100px 100px;
   }
   .box {
@@ -90,7 +90,7 @@ body,h1,h2 {
   }
 }
 
-.wrapper {
+.playBoard {
   margin-top: 62px;
   display: grid;
 }
@@ -136,7 +136,7 @@ body,h1,h2 {
   }
 }
 
-.o {
+.cell {
   background: none;
   border: none;
 }
@@ -147,11 +147,6 @@ body,h1,h2 {
   background-repeat:no-repeat;
   background-position: center center;
   opacity: 0.2;
-}
-
-.x {
-  background: none;
-  border: none;
 }
 
 .x:hover {

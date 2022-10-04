@@ -12,44 +12,50 @@
   <div class="center">
     <h1 class="title">Tic Tac Toe</h1>
   </div>
-  <div class="newGame hidden">
-    <div class="center">
+  <div class="newGame hidden" id="newGame">
+    <div class="winner center" id="winner">
+      <h2 class="winnerName" id="winnerName"></h2>
+      <h2>won!</h2>
+    </div>
+    <div class="center newTitle">
       <h2>New game?</h2>
     </div>
-    <div class="center vsPlayer">
+  </div>
+  <div class="selectPlayer hidden">
+    <div class="center vsPlayer" id="vsPlayer">
       <p>Player vs. Player</p>
     </div>
-    <div class="center vsComputer">
+    <div class="center vsComputer" id="vsComputer">
       <p>Player vs. Computer</p>
     </div>
   </div>
-  <div class="wrapper center">
+  <div class="playBoard center" id="playBoard">
     <div class="box">
-      <button class="o"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="x"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="o"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="x"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="o"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="x"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="o"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="x"></button>
+      <button class="cell" board-cell></button>
     </div>
     <div class="box">
-      <button class="o"></button>
+      <button class="cell" board-cell></button>
     </div>
   </div>
 </body>
