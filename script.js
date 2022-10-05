@@ -2,7 +2,6 @@ const board = document.getElementById('playBoard')
 const boardCells = document.querySelectorAll('[boardCell]')
 const newGame = document.getElementById('newGame')
 const winner = document.getElementById('winner')
-const winnerName = document.getElementById('winnerName')
 const vsPlayer = document.getElementById('vsPlayer')
 const vsComputer = document.getElementById('vsComputer')
 let xTurn = true
@@ -26,8 +25,8 @@ const startGame = () => {
     cell.classList.remove('xChecked')
     cell.classList.remove('oChecked')
     cell.removeEventListener('click', gameRound)
-    cell.addEventListener('mouseover', addHover)
     cell.addEventListener('click', gameRound, {once:true})
+    cell.addEventListener('mouseover', addHover)
   })
 }
 
@@ -41,7 +40,13 @@ const gameRound = (e) => {
   const cell = e.target
   const playerClass = xTurn ? 'xChecked' : 'oChecked'
   placePlayerClass(cell, playerClass)
-  changePlayer()
+  if (checkWin(playerClass)) {
+    gameOver(false)
+  } else if (checkForDraw()) {
+    gameOver(true)
+  } else {
+    changePlayer()
+  }
 }
 
 const placePlayerClass = (cell, player) => {
@@ -56,14 +61,14 @@ const changePlayer = () => {
 const addHover = (e) => {
   const cell = e.target
   const cellClasses = cell.classList 
+  cellClasses.remove('o')
+  cellClasses.remove('x')
   if (cellClasses.contains('xChecked') || cellClasses.contains('oChecked')) {
     return
   } else if (xTurn) {
     cellClasses.add('x')
-    cellClasses.remove('o')
   } else {
     cellClasses.add('o')
-    cellClasses.remove('x')
   }
 }
 
@@ -83,7 +88,22 @@ const handleCellHover = () => {
 
 vsPlayer.addEventListener('click', startGame)
 
-const gameOver = () => {
-  board.classList.add('hidden')
+function checkWin(turn) {
+	return winningCombinations.some(combination => {
+		return combination.every(index => {
+			return boardCells[index].classList.contains(turn)
+		})
+	})
+}
+
+const gameOver = (draw) => {
+  const winnerName = document.getElementById('winnerName')
+  if (draw) {
+    winnerName.innerText = 'Draw!'
+  } else {
+    winnerName.innerText = `Player ${xTurn ? 'one' : 'two'} won!`
+  }
+  newGame.classList.remove('hidden')
+  winner.classList.remove('hidden')
 }
 
