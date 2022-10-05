@@ -115,24 +115,16 @@ body,h1,h2 {
 }
 
 @media (min-width: 500px) {
-  .o {
-    height: 180px;
-    width: 180px;
-  }
-  .x {
-    height: 180px;
-    width: 180px;
+  .o, .x, .xChecked, .oChecked {
+    height: 200px;
+    width: 200px;
   }
 } 
 
 @media (max-width: 500px) {
-  .o {
-    height: 80px;
-    width: 80px;
-  }
-  .x {
-    height: 80px;
-    width: 80px;
+  .o, .x, .xChecked, .oChecked {
+    height: 100px;
+    width: 100px;
   }
 }
 
@@ -142,20 +134,31 @@ body,h1,h2 {
 }
 
 .o:hover {
-  background-image: url('public/o.png');
+  background-image: url('public/oGray.png');
   background-size: 100% 100%;
   background-repeat:no-repeat;
   background-position: center center;
-  opacity: 0.2;
 }
 
 .x:hover {
-  background-image: url('public/x.png');
+  background-image: url('public/xGray.png');
   background-size: 100% 100%;
   background-repeat:no-repeat;
   background-position: center center;
-  opacity: 0.2;
 }
 
+.xChecked {
+  background-image: url('public/x.png') !important;
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+.oChecked {
+  background-image: url('public/o.png') !important;
+  background-size: 100% 100%;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
 
 
