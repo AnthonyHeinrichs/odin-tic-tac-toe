@@ -31,6 +31,12 @@ const startGame = () => {
   })
 }
 
+const checkForDraw = () => {
+  return [...boardCells].every(cell => {
+    return cell.classList.contains('xChecked') || cell.classList.contains('oChecked')
+  })
+}
+
 const gameRound = (e) => {
   const cell = e.target
   const playerClass = xTurn ? 'xChecked' : 'oChecked'
@@ -40,6 +46,7 @@ const gameRound = (e) => {
 
 const placePlayerClass = (cell, player) => {
   cell.classList.add(player)
+  console.log(checkForDraw())
 }
 
 const changePlayer = () => {
