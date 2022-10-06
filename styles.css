@@ -30,38 +30,27 @@ body,h1,h2 {
 
 .title {
   margin-top: 36px;
+  margin-bottom: 24px;
   font-family: 'Gemunu Libre', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: 800;
   letter-spacing: +0.2em;
 }
 
-.newGame {
-  margin-top: 48px;
-}
-
-.vsPlayer {
-  margin-top: 48px;
+.start {
+  margin-bottom: 24px;
   cursor: pointer;
   transition: 200ms;
   width: 100%;
   background: rgb(213, 213, 245);
 }
 
-.vsPlayer:hover {
+.start:hover {
   font-size: 36px;
-  transition: 200ms;
+  transition: 0.4s;
 }
 
-.vsComputer {
-  cursor: pointer;
-  transition: 200ms;
-  width: 100%;
-  background: rgb(245, 213, 213);
-}
-
-.vsComputer:hover {
-  font-size: 36px;
-  transition: 200ms;
+.winnerName {
+  margin-bottom: 24px;
 }
 
 .center {
@@ -91,7 +80,7 @@ body,h1,h2 {
 }
 
 .playBoard {
-  margin-top: 62px;
+  margin-top: 24px;
   display: grid;
 }
 
