@@ -36,12 +36,32 @@ body,h1,h2 {
   letter-spacing: +0.2em;
 }
 
+.centerColumn {
+  height: 100%;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+}
+
+.newGame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 30vw;
+  height: 250px;
+  border-radius: 10px; 
+  opacity: 0.95;
+  background: rgb(222, 252, 222);
+  -webkit-box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 4px 7px 8px 1px rgba(0,0,0,0); 
+  box-shadow: 5px 5px 15px 5px #FF8080, -9px 5px 15px 5px #FFE488, -7px -5px 15px 5px #8CFF85, 12px -5px 15px 5px #80C7FF, 12px 10px 15px 7px #E488FF, -10px 10px 15px 7px #FF616B, -10px -7px 27px 1px #8E5CFF, 4px 7px 8px 1px rgba(0,0,0,0);
+}
+
 .start {
   margin-bottom: 24px;
   cursor: pointer;
   transition: 200ms;
   width: 100%;
-  background: rgb(213, 213, 245);
 }
 
 .start:hover {
@@ -50,7 +70,9 @@ body,h1,h2 {
 }
 
 .winnerName {
-  margin-bottom: 24px;
+  margin-bottom: 12px;
+  margin-top: 24px;
+  background: rgb(222, 252, 222);
 }
 
 .center {
